@@ -1,9 +1,19 @@
-import React from 'react'
+import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchAndHandleData } from '../actions';
+import { Todos } from './Todos';
+import { Goals } from './Goals';
 
-export default function App () {
+export function App () {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+      dispatch(fetchAndHandleData());
+  }, [dispatch]);
   return (
-    <div>
-      Goals - Todos
-    </div>
-  )
+      <div>
+          <Todos />
+          <Goals />
+      </div>
+     
+  );
 }
