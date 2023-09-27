@@ -1,6 +1,6 @@
 import { ADD_GOAL, REMOVE_GOAL, RECEIVE_DATA } from "../actions";
 
-export default function goals (state = [], action) {
+export function goals (state = [], action) {
     switch(action.type) {
         case ADD_GOAL:
             return [...state, action.goal];
